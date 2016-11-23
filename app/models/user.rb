@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
-
-  # associations
+  has_many :votes, :comments, :questions, :answers
 
   def password
     @password ||= BCrypt::Password.new(hashed_password)
