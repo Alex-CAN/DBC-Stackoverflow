@@ -73,6 +73,7 @@ namespace :generate do
     File.open(path, 'w+') do |f|
       f.write(<<-EOF.strip_heredoc)
         require 'spec_helper'
+
         describe #{name} do
           pending "add some examples to (or delete) #{__FILE__}"
         end
@@ -132,9 +133,9 @@ namespace :db do
   end
 end
 
-desc 'Start PRY with application environment loaded'
+desc 'Start IRB with application environment loaded'
 task "console" do
-  exec "pry -r./config/environment"
+  exec "irb -r./config/environment"
 end
 
 
