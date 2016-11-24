@@ -1,4 +1,5 @@
 class Answer < ActiveRecord::Base
-  has_many :comments
-  # has_many :votes, polymorphic: true
+  validates :user_id, :text, { presence: true }
+  belongs_to :user
+  belongs_to :question
 end
