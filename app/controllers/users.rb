@@ -27,23 +27,39 @@ end
 
 # show a particular user
 get '/users/:id' do
-  if logged_in? # something is wrong here, the logged in user can see other profiles
+  # something is wrong here, the logged in user can see other profiles
+  #   p "*"* 80
+  #   p " params id: #{params[:id]}"
+  #   p "*"* 80
+  #   p "current user: #{current_user}"
+  #   p "*"* 80
+  #   p " current user id: #{current_user.id}"
+  # if params[:id] == current_user.id
+  if current_user
     @user = User.find(params[:id])
     erb :'/users/show'
   else
+    p "*"* 80
     p "Not authorized to view this page, try logging in"
     erb :'/sessions/new'
   end
 end
 
-# # edit a user
-# get '/users/:id/edit' do
-# end
+# edit a user
+get '/users/:id/edit' do
+  erb :'/users/edit'
+end
 
-# # update: handle form submission for editing user
-# put '/users/:id' do
-# end
+# update: handle form submission for editing user
+put '/users/:id' do
+  @user = User.find(params[:id])
+  @user.update(params[:user])
+  erb :'/users/show'
+end
 
-# # delete a user
-# delete '/users/:id' do
-# end
+# delete a user
+delete '/users/:id' do
+  @user = User.find(params[:id])
+  @user.destroy
+  redirect '/'
+end
