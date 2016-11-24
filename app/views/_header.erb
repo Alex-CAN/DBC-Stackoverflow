@@ -1,0 +1,6 @@
+<% if current_user %>
+  <%= erb :'/sessions/logout' %>
+<% else %>
+  <%= erb :'/sessions' %>
+  <a href="/users/new">Register</a>
+<% end %>
