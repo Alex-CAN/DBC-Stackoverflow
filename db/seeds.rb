@@ -7,14 +7,14 @@ require 'faker'
 end
 
 100.times do
-  Answer.create!( :text => Faker::Hipster.sentence,
+  Answer.create!( :text => Faker::ChuckNorris.fact,
                   :best_answer => false,
                   :user_id => rand(1..100),
                   :question_id => rand(1..100))
 end
 
 100.times do
-  Question.create!( :text => Faker::Hipster.words,
+  Question.create!( :text => Faker::Hipster.sentence,
                     :user_id => rand(1..100))
 end
 

@@ -1,0 +1,6 @@
+Asked by: <%= @question.user.name %>
+<br>
+<%= @question.text %>
+<% @question.answers.each do |answer| %>
+  <%= answer.text %>
+<% end %>
