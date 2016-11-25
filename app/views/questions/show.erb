@@ -1,7 +1,7 @@
-Asked by: <%= @question.user.name %> on <%= @question.created_at %>
 <br>
 <br>
 <h1>Question:  <%= @question.text %></h1>
+Asked by: <%= @question.user.name %> on <%= @question.created_at %>
 <br>
 <% @question.answers.each do |answer| %>
   <h2> Answer by: <%= answer.user.name %></h2>
