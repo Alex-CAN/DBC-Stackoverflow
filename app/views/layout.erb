@@ -7,6 +7,9 @@
     See: http://necolas.github.com/normalize.css/
   -->
   <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
   <!--
     application.css is where you put your styles
   -->
@@ -18,7 +21,9 @@
   <title></title>
 </head>
 <body>
-  <%= erb :'/_header' %>
-  <%= yield %>
+  <div class="header-main">
+    <%= erb :'/_header' %>
+  </div>
+    <%= yield %>
 </body>
 </html>

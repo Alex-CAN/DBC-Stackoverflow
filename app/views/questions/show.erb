@@ -1,0 +1,14 @@
+<br>
+<br>
+<h1>Question:  <%= @question.text %></h1>
+Asked by: <%= @question.user.name %> on <%= @question.created_at %>
+<br>
+<% @question.answers.each do |answer| %>
+  <h2> Answer by: <%= answer.user.name %></h2>
+  <p>answered at: <%= answer.created_at %></p>
+  <%= answer.text %>
+  <br>
+<% end %>
+
+<br>
+<a href="/questions/<%= @question.id %>/answers/new">Answer Question</a>
