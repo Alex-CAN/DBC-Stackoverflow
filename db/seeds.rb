@@ -17,12 +17,3 @@ end
   Question.create!( :text => Faker::Hipster.sentence,
                     :user_id => rand(1..100))
 end
-
-
-# answers.each do |answer|
-#   user_id = answer.sample(rand(2..4))
-#   user_channels.each do |channel|
-#     Subscription.create!(user: user,
-#                          channel: channel)
-#   end
-# end

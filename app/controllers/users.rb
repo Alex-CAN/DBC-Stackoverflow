@@ -31,7 +31,7 @@ get '/users/:id' do
     @user = User.find(params[:id])
     erb :'/users/show'
   else
-    @errors = "Not authorized to view this page, try logging in"
+    @error = "Not authorized to view this page, try logging in"
     erb :'/sessions/new'
   end
 end

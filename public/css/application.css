@@ -17,3 +17,16 @@ h1 a {
   letter-spacing: 0.15em;
   text-decoration: none;
 }
+
+.header-main {
+  text-align: center;
+}
+
+.pusheen {
+  position: fixed;
+  margin: 10px;
+  margin-right: 15%;
+  top: 0;
+  right: 0;
+  width: 300px;
+}
