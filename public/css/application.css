@@ -1,3 +1,7 @@
+/** {
+  outline:1px solid blue;
+}
+*/
 body {
   background-color: #DCDBD9;
   color: #2C2C2C;
@@ -5,7 +9,7 @@ body {
 }
 
 h1 {
-  font-size: 24px;
+  font-size: 50px;
   font-style: italic;
   font-weight: normal;
 }
@@ -23,10 +27,17 @@ h1 a {
 }
 
 .pusheen {
-  position: fixed;
+
   margin: 10px;
   margin-right: 15%;
   top: 0;
   right: 0;
   width: 300px;
+  float: right;
+}
+
+.tabs{
+  float: left;
+  list-style: none;
+}
 }

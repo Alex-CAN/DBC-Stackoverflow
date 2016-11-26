@@ -1,7 +1,27 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
+  event.preventDefault();
+  $('.tab-content').hide()
+  $('.tabs a').on('click', function(){
+  var tabID = $(this).attr('href');
+  $('.tab-content').hide()
+  $(tabID).show();
+  });
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  
 });
+
+// $(document).ready(function () {
+//   event.preventDefault();
+//   $('.tabs a').on('click', function() {
+
+//   var tabID = $(this).attr('href');
+//     $('.tab-content').hide()
+//     $(tabID).show();
+//     $('.tabs li').removeClass('active');
+//     // debugger;
+//     $(this).parent().addClass('active');
+//     // $(this).attr('href').show ();
+
+
+//   });
+// });
