@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   has_many :questions
   has_many :answers
+  has_many :answered_questions, through: :answers, source: :question
 
   def password
     @password ||= BCrypt::Password.new(hashed_password)
@@ -11,7 +12,7 @@ class User < ActiveRecord::Base
     self.hashed_password = @password
   end
 
-  def authenticate?(email, password)
-    self.password == password && self.email == email
+  def authenticate(plain_password)
+    self.password == plain_password
   end
 end

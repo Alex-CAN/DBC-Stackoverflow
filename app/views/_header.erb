@@ -1,0 +1,19 @@
+<% if current_user %>
+  <h1> Hello <%= current_user.name.capitalize %></h1>
+  <a href="/">Home</a>
+  <a href="/users/<%= current_user.id %>">Profile</a>
+  <a href="/questions/new">Ask a question</a>
+  <br>
+  <form action='/sessions/logout' method='get'>
+  <br>
+    <button type='submit'>Logout</button>
+  </form>
+<% else %>
+  <a href="/users/new">Register</a>
+  <a href="/sessions">Login</a>
+  <a href="/">Home</a>
+<% end %>
+<br>
+<div class="pusheen">
+  <img src='http://scontent.cdninstagram.com/t51.2885-15/s480x480/e35/13767458_158136971285141_1490809401_n.jpg?ig_cache_key=MTMxMjc2NzYzNTQxNDM1OTc4OQ%3D%3D.2' width=150  height=150>
+</div>
