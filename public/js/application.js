@@ -7,7 +7,22 @@ $(document).ready(function() {
   $(tabID).show();
   });
 
-  
+  $('#registration, form').on('submit', function(){
+  event.preventDefault();
+  var $reg_form = $(this);
+      var method = $reg_form.attr('method');
+      var action = $reg_form.attr('action');
+      var data = $reg_form.attr('submit');
+
+  console.log(data)
+  console.log(action)
+    $.ajax({
+      urls: action,
+      method: method,
+      data: data
+      }).done(function(response) {
+      });
+  });
 });
 
 // $(document).ready(function () {
