@@ -1,7 +1,7 @@
-/** {
+* {
   outline:1px solid blue;
 }
-*/
+
 
 
 
@@ -33,6 +33,16 @@ h1 a {
   letter-spacing: 0.15em;
   text-decoration: none;
 }
+
+
+.askAnswer{
+  float: right;
+  clear: right;
+  position: relative;
+}
+
+
+
 
 .header-main {
   text-align: center;

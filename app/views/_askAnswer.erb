@@ -1,0 +1,21 @@
+<% if current_user %>
+<p>Hello <%= current_user.name.capitalize %></p>
+<h2> Please post a new question! </h2>
+
+<% if @error %>
+  <%= @error %>
+<% end %>
+
+<form method="post" action="/questions">
+  <input type="text" name="question" placeholder="question">
+  <input type="submit" value="submit new question">
+</form>
+<br>
+<form method="post" action="/answers">
+    <input type="hidden" name="question_id" value="<%= @question.id %>">
+    <input type="text" name="answer" placeholder="answer text here">
+    <input type="submit" value="submit new answer">
+</form>
+  <% else %>
+  <p>  You must be logged in to ask or answer questions! </p>
+<% end %>

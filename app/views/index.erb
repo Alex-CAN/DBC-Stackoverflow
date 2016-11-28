@@ -12,13 +12,14 @@
 
 <!-- Grid -->
 <div class="w3-row">
-
-                  
-
+  <div class="askAnswer">
+    <%= erb :'/_askAnswer' %>
+  </div>  
 <!-- <br>
 <br> -->
-
-<% @questions.each do |q|%>
+<%top_question= []%>
+<% 5.times{|t| top_question << @questions[t]}%>
+<% top_question.each do |q|%>
 <!-- Blog entries -->
 <div class="w3-col l8 s12">
   <!-- Blog entry -->
@@ -45,6 +46,7 @@
 <%end%>
 
   <hr>
+
 
 <!-- END Introduction Menu -->
 </div>
