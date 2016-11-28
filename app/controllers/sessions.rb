@@ -1,5 +1,5 @@
 get '/sessions' do
-  erb :'/sessions/new'
+  erb :'/sessions/_new'
 end
 
 post '/sessions' do
@@ -9,7 +9,7 @@ post '/sessions' do
     redirect "/users/#{@user.id}"
   else
     @error = "Email and/or password are invalid, try again"
-    erb :'/sessions/new'
+    erb :'/sessions/_new'
   end
 end
 
