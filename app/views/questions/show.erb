@@ -1,14 +1,31 @@
 <br>
 <br>
+<br>
+<br>
 <h1>Question:  <%= @question.text %></h1>
 Asked by: <%= @question.user.name %> on <%= @question.created_at %>
+<br>
+Up Votes: <%= @question.votes.count() %>
 <br>
 <% @question.answers.each do |answer| %>
   <h2> Answer by: <%= answer.user.name %></h2>
   <p>answered at: <%= answer.created_at %></p>
   <%= answer.text %>
-  <br>
-<% end %>
+
+
+  <% if answer.comments != [] %>
+		  <h3> Comments: </h3>
+		  <% answer.comments.each do |c| %>
+		  	Comment by: <%= c.user.name %> on: <%= c.created_at %>
+		  	<br>
+		  	<%= c.text %>
+		  	<br>
+		  	up-votes: <%= c.votes.count() %>
+		  <% end %>
+		  <br>
+		<% end %>
+	<% end %>
+
 
 <br>
 <a href="/questions/<%= @question.id %>/answers/new">Answer Question</a>

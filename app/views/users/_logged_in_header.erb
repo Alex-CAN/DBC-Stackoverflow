@@ -1,0 +1,9 @@
+<h1> Hello <%= current_user.name.capitalize %></h1>
+	<a href="/">Home</a>
+	<a href="/users/<%= current_user.id %>">Profile</a>
+	<a href="/questions/new">Ask a question</a>
+	<br>
+	<form action='/sessions/logout' method='get'>
+	<br>
+	<button type='submit'>Logout</button>
+</form>
