@@ -35,7 +35,7 @@
           <p><button class="w3-btn w3-padding-large w3-white w3-border w3-hover-border-black"><b><a href="/questions/<%= q.id %>">READ ANSWERS</a> »</b></button></p>
         </div>
         <div class="w3-col m4 w3-hide-small">
-          <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-badge">2</span></span></p>
+          <p><span class="w3-padding-large w3-right"><b>Up Votes:  </b> <span class="w3-badge"><%= q.votes.count() %></span></span></p>
         </div>
       </div>
     </div>
