@@ -9,9 +9,39 @@
     <button type='submit'>Logout</button>
   </form>
 <% else %>
-  <a href="/users/new">Register</a>
-  <a href="/sessions">Login</a>
-  <a href="/">Home</a>
+
+  <nav>
+  <ul class="tabs">
+    <li class="active"><a href="#registration">Register</a></li> 
+    <li><a href="#login">Login</a></li>
+    <li><a href="/">Home</a></li>
+  </ul>
+
+  <div class="tab-content" id="registration">
+    <form action="/users" method="post">
+      <label>Name: </label>
+      <input type="text" name="user[name]">
+      <label>Email: </label>
+      <input type="email" name="user[email]">
+      <label>Password: </label>
+      <input type="password" name="user[password]" placeholder="password">
+    <br>
+      <input type="password" name="password_confirm" placeholder="confirm password">
+    <br>
+      <input type="submit" name="Click to register">
+    </form>
+  </div>
+  <div class="tab-content" id="login">
+    <form action="/sessions" method="post">
+      <input type="text" name="email" placeholder="email">
+      <input type="password" name="password" placeholder="password">
+      <input type="submit" value="submit">
+    </form>
+ </div>
+ </nav>
+
+
+
 <% end %>
 <br>
 <div class="pusheen">
